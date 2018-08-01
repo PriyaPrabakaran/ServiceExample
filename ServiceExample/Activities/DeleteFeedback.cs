@@ -54,6 +54,7 @@ namespace ServiceExample.Activities
                  var response = await client.PostAsync(uri, content);
                  var contents = await response.Content.ReadAsStringAsync();
                  progress.Hide();
+                 Clear();
                  if (response.IsSuccessStatusCode)
                  {
                      Toast.MakeText(this, "Feedback delete successfully!", ToastLength.Long).Show();
@@ -63,6 +64,11 @@ namespace ServiceExample.Activities
                      Toast.MakeText(this, "ERROR!!! Feedback not deleted!", ToastLength.Long).Show();
                  }
              };
+        }
+
+        void Clear()
+        {
+            edtId.Text = "";
         }
     }
 }

@@ -91,15 +91,15 @@ namespace ServiceExample.Activities
                 var response = await client.PostAsync(uri, content);
                 var contents = await response.Content.ReadAsStringAsync();
                 Clear();
-
+                progress.Hide();
                 if (response.IsSuccessStatusCode)
                 {
-                    progress.Hide();
+                  
                     Toast.MakeText(this, "Feedback updated successfully!", ToastLength.Long).Show();
                 }
                 else
                 {
-                    progress.Hide();
+                 
                     Toast.MakeText(this, "ERROR!!! Feedback not updated!", ToastLength.Long).Show();
                 }
             };

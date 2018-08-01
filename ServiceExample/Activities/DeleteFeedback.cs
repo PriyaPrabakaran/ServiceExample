@@ -37,33 +37,32 @@ namespace ServiceExample.Activities
             progress.SetMessage("Deleting Feedback, Please wait...");
             progress.SetCancelable(false);
 
-            btnDel.Click+= async delegate
-            {
-                Feedback feedback = new Feedback
-                {
-                    Id = int.Parse(edtId.Text)
-                };
-                progress.Show();
-                HttpClient client = new HttpClient();
-                string url = "http://devdemand.firestreamonline.com/transpac/delete?id="+feedback.Id.ToString();
-                client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36");
-                var uri = new Uri(url);
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                var json = JsonConvert.SerializeObject(feedback);
-                var content = new StringContent(json, Encoding.UTF8, "application/json");
-                var response = await client.PostAsync(uri, content);
-                var contents = await response.Content.ReadAsStringAsync();
-
-                progress.Hide();
-                if (response.IsSuccessStatusCode)
-                {
-                    Toast.MakeText(this, "Feedback delete successfully!", ToastLength.Long).Show();
-                }
-                else
-                {
-                    Toast.MakeText(this, "ERROR!!! Feedback not deleted!", ToastLength.Long).Show();
-                }
-            };
+            btnDel.Click += async delegate
+             {
+                 Feedback feedback = new Feedback
+                 {
+                     Id = int.Parse(edtId.Text)
+                 };
+                 progress.Show();
+                 HttpClient client = new HttpClient();
+                 string url = "http://devdemand.firestreamonline.com/transpac/delete?id=" + feedback.Id.ToString();
+                 client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36");
+                 var uri = new Uri(url);
+                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                 var json = JsonConvert.SerializeObject(feedback);
+                 var content = new StringContent(json, Encoding.UTF8, "application/json");
+                 var response = await client.PostAsync(uri, content);
+                 var contents = await response.Content.ReadAsStringAsync();
+                 progress.Hide();
+                 if (response.IsSuccessStatusCode)
+                 {
+                     Toast.MakeText(this, "Feedback delete successfully!", ToastLength.Long).Show();
+                 }
+                 else
+                 {
+                     Toast.MakeText(this, "ERROR!!! Feedback not deleted!", ToastLength.Long).Show();
+                 }
+             };
         }
     }
 }

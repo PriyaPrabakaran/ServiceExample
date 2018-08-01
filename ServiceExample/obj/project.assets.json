@@ -761,11 +761,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\priya\\ServiceExample\\ServiceExample\\ServiceExample.csproj",
+      "projectUniqueName": "C:\\Users\\priyadarshini\\Desktop\\Service\\ServiceExample\\ServiceExample\\ServiceExample.csproj",
       "projectName": "ServiceExample",
-      "projectPath": "D:\\priya\\ServiceExample\\ServiceExample\\ServiceExample.csproj",
+      "projectPath": "C:\\Users\\priyadarshini\\Desktop\\Service\\ServiceExample\\ServiceExample\\ServiceExample.csproj",
       "packagesPath": "C:\\Users\\priyadarshini\\.nuget\\packages\\",
-      "outputPath": "D:\\priya\\ServiceExample\\ServiceExample\\obj\\",
+      "outputPath": "C:\\Users\\priyadarshini\\Desktop\\Service\\ServiceExample\\ServiceExample\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
